@@ -20,22 +20,15 @@ namespace Library_Management_Program_LMP_
             //라벨 설정
             label5.Text = DataManager.Books.Count.ToString();
             label6.Text = DataManager.Users.Count.ToString();
-            label7.Text = DataManager.Books.Where((x) => x.isBorrowed).Count().ToString();
-            label8.Text = DataManager.Books.Where((x) => { return x.isBorrowed && x.BorrowedAt.AddDays(7) < DateTime.Now; }).Count().ToString();
+            label7.Text = DataManager.Books.Where((x) => x.IsBorrowed).Count().ToString();
+            label8.Text = DataManager.Books.Where((x) => { return x.IsBorrowed && x.BorrowedAt.AddDays(7) < DateTime.Now; }).Count().ToString();
 
             //데이터 그리드 설정
             dataGridView1.DataSource = DataManager.Books;
             dataGridView2.DataSource = DataManager.Users;
-            dataGridView1.CurrentCellChanged += DataGridView1_CurrentCellChnaged;
-            dataGridView2.CurrentCellChanged += DataGridView2_CurrentCellChanged;
-
-            button1.Click += Button1_Click;
-            button2.Click += Button2_Click;
-
         }
 
-
-        private void DataGridView1_CurrentCellChnaged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -44,13 +37,13 @@ namespace Library_Management_Program_LMP_
                 textBox1.Text = book.Isbn;
                 textBox2.Text = book.Name;
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-
+                MessageBox.Show(exception.Message);
             }
         }
 
-        private void DataGridView2_CurrentCellChanged(object sender, EventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -58,9 +51,9 @@ namespace Library_Management_Program_LMP_
                 User book = dataGridView2.CurrentRow.DataBoundItem as User;
                 textBox3.Text = book.Id.ToString();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-
+                MessageBox.Show(exception.Message);
             }
         }
         
@@ -79,7 +72,7 @@ namespace Library_Management_Program_LMP_
                 try
                 {
                     Book book = DataManager.Books.Single((x) => x.Isbn == textBox1.Text);
-                    if(book.isBorrowed)
+                    if(book.IsBorrowed)
                     {
                         MessageBox.Show("이미 대여 중인 도서입니다");
                     }
@@ -88,7 +81,7 @@ namespace Library_Management_Program_LMP_
                         User user = DataManager.Users.Single((x) => x.Id.ToString() == textBox3.Text);
                         book.UserId = user.Id;
                         book.UserName = user.Name;
-                        book.isBorrowed = true;
+                        book.IsBorrowed = true;
                         book.BorrowedAt = DateTime.Now;
 
                         dataGridView1.DataSource = null;
@@ -116,12 +109,12 @@ namespace Library_Management_Program_LMP_
                 try
                 {
                     Book book = DataManager.Books.Single((x) => x.Isbn == textBox1.Text);
-                    if (book.isBorrowed)
+                    if (book.IsBorrowed)
                     {
                         User user = DataManager.Users.Single((x) => x.Id.ToString() == book.UserId.ToString());
                         book.UserId = 0;
                         book.UserName = "";
-                        book.isBorrowed = false;
+                        book.IsBorrowed = false;
                         book.BorrowedAt = new DateTime();
 
                         dataGridView1.DataSource = null;
@@ -162,10 +155,5 @@ namespace Library_Management_Program_LMP_
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = DataManager.Users;
         }
-
-
-        
-
-        
     }
 }

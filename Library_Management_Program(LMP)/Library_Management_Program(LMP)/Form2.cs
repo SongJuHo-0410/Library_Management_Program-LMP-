@@ -19,7 +19,6 @@ namespace Library_Management_Program_LMP_
 
             //데이터 그리드 설정
             dataGridView1.DataSource = DataManager.Books;
-            dataGridView1.CurrentCellChanged += DataGridView1_CurrentCellChanged;
 
             //버튼 설정
             button1.Click += (sender, e) =>
@@ -87,9 +86,7 @@ namespace Library_Management_Program_LMP_
                     MessageBox.Show("존재하지 않는 도서입니다.");
                 }
             };
-        }
-
-        private void DataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        }private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -99,10 +96,12 @@ namespace Library_Management_Program_LMP_
                 textBox3.Text = book.Publisher;
                 textBox4.Text = book.Page.ToString();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
 
             }
         }
+        
+
     }
 }

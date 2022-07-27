@@ -19,7 +19,6 @@ namespace Library_Management_Program_LMP_
 
             //데이터 그리드 설정
             dataGridView1.DataSource = DataManager.Users;
-            dataGridView1.CurrentCellChanged += DataGridView1_CurrentCellChanged; 
 
             //버튼 설정
             button1.Click += (sender, e) =>
@@ -84,7 +83,7 @@ namespace Library_Management_Program_LMP_
             };
         }
 
-        private void DataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -92,7 +91,7 @@ namespace Library_Management_Program_LMP_
                 textBox1.Text = user.Id.ToString();
                 textBox2.Text = user.Name;
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
 
             }

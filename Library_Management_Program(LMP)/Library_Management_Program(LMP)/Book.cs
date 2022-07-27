@@ -15,7 +15,7 @@ namespace Library_Management_Program_LMP_
 
         public int UserId { get; set; }
         public string UserName { get; set; }
-        public bool isBorrowed { get; set; }
+        public bool IsBorrowed { get; set; }
         public DateTime BorrowedAt { get; set; }
     }
 }

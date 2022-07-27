@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GNM\\Desktop\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj": {}
+    "C:\\Users\\GNM\\Desktop\\Library_Management_Program-LMP-\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj": {}
   },
   "projects": {
-    "C:\\Users\\GNM\\Desktop\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj": {
+    "C:\\Users\\GNM\\Desktop\\Library_Management_Program-LMP-\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GNM\\Desktop\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj",
+        "projectUniqueName": "C:\\Users\\GNM\\Desktop\\Library_Management_Program-LMP-\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj",
         "projectName": "Library_Management_Program(LMP)",
-        "projectPath": "C:\\Users\\GNM\\Desktop\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj",
+        "projectPath": "C:\\Users\\GNM\\Desktop\\Library_Management_Program-LMP-\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\Library_Management_Program(LMP).csproj",
         "packagesPath": "C:\\Users\\GNM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GNM\\Desktop\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\obj\\",
+        "outputPath": "C:\\Users\\GNM\\Desktop\\Library_Management_Program-LMP-\\Library_Management_Program(LMP)\\Library_Management_Program(LMP)\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GNM\\AppData\\Roaming\\NuGet\\NuGet.Config",
